@@ -1,0 +1,24 @@
+{
+  "theme": "neutral",
+  "fontFamily": "Arial, sans-serif",
+  "themeVariables": {
+    "fontSize": "18px"
+  },
+  "flowchart": {
+    "htmlLabels": false,
+    "curve": "linear"
+  },
+  "securityLevel": "strict",
+  "c4": {
+    "diagramMarginX": 10,
+    "diagramMarginY": 10,
+    "width": 230,
+    "personFontSize": 18,
+    "systemFontSize": 18,
+    "external_systemFontSize": 18,
+    "containerFontSize": 18,
+    "container_dbFontSize": 18,
+    "messageFontSize": 16,
+    "boundaryFontSize": 16
+  }
+}

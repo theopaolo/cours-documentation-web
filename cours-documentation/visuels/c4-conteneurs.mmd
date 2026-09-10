@@ -1,0 +1,15 @@
+C4Container
+    title Réserve ta place : conteneurs du système fictif
+    Person(participant, "Participant", "Réserve une place")
+    System_Boundary(systeme, "Réserve ta place") {
+      Container(navigateur, "Application navigateur", "JavaScript", "Présente les ateliers")
+      Container(serveur, "Serveur", "Application web", "Contrôle et enregistre les réservations")
+      ContainerDb(base, "Base", "PostgreSQL", "Conserve les données")
+    }
+    System_Ext(courriels, "Service de courriels", "Envoie les confirmations")
+    Rel(participant, navigateur, "Utilise")
+    Rel(navigateur, serveur, "Demande une réservation", "HTTPS / JSON")
+    Rel(serveur, base, "Lit et écrit", "SQL")
+    Rel(serveur, courriels, "Demande une confirmation", "Protocole à préciser")
+    UpdateRelStyle(navigateur, serveur, $offsetX="-55", $offsetY="-85")
+    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")

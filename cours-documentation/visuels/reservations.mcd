@@ -1,0 +1,5 @@
+Personne: id personne, nom
+Effectuer, 0N Personne, 11 Réservation
+Réservation: id réservation, date création, statut
+Concerner, 11 Réservation, 0N Atelier
+Atelier: id atelier, titre, date atelier, capacité

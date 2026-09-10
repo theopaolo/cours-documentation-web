@@ -1,0 +1,24 @@
+{
+  "name": "atelier-documentation-vivante",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "demo": "node demo/src/demo.mjs",
+    "test": "node --test demo/tests/*.test.mjs",
+    "test:bdd": "cucumber-js --config cucumber.mjs && node scripts/check-bdd.mjs",
+    "docs:api": "jsdoc -c jsdoc.json",
+    "docs:deps": "depcruise --no-config --output-type mermaid demo/src > cours-documentation/visuels/dependances.mmd",
+    "docs:diagrams": "node scripts/render-diagrams.mjs",
+    "check:links": "python3 scripts/check-links.py",
+    "demo:regression": "node scripts/demo-regression.mjs"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "13.2.1",
+    "@mermaid-js/mermaid-cli": "11.17.0",
+    "dependency-cruiser": "18.2.0",
+    "jsdoc": "4.0.5"
+  }
+}

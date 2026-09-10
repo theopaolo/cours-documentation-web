@@ -1,0 +1,11 @@
+C4Context
+    title Réserve ta place : contexte du système fictif
+    Person(participant, "Participant", "Réserve une place")
+    Person(organisateur, "Organisateur", "Publie les ateliers")
+    System(reservations, "Réserve ta place", "Gère les ateliers et les réservations")
+    System_Ext(courriels, "Service de courriels", "Envoie les confirmations")
+    Rel(participant, reservations, "Consulte et réserve")
+    Rel(organisateur, reservations, "Publie et consulte")
+    Rel(reservations, courriels, "Demande un envoi")
+    UpdateRelStyle(reservations, courriels, $offsetX="-45", $offsetY="-65")
+    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")

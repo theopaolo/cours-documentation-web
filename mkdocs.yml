@@ -1,0 +1,50 @@
+site_name: Documenter son projet web
+site_description: Cours et démonstrations de documentation vivante
+docs_dir: .build/docs
+site_dir: site
+use_directory_urls: false
+theme:
+  name: mkdocs
+  locale: fr
+  color_mode: light
+  user_color_mode_toggle: true
+  highlightjs: false
+nav:
+  - Parcours: documenter-son-projet-web-atelier-5h.md
+  - Cours:
+      - Pourquoi documenter: cours-documentation/01-pourquoi-documenter.md
+      - Organiser les contenus: cours-documentation/02-organiser-les-contenus.md
+      - Écrire clairement: cours-documentation/03-ecrire-clairement.md
+      - README et guides: cours-documentation/04-readme-et-guides-pratiques.md
+      - Architecture C4: cours-documentation/05-architecture-c4.md
+      - Données et Merise: cours-documentation/06-donnees-et-merise.md
+      - Décisions et code: cours-documentation/07-decisions-et-code.md
+      - Vérifier et maintenir: cours-documentation/08-verifier-et-maintenir.md
+      - Documentation vivante et BDD: cours-documentation/09-documentation-vivante.md
+  - Pratiquer:
+      - Démonstration JavaScript: demo/README.md
+      - Exemples et corrigés: cours-documentation/exemples.md
+      - Documentation dans l’éditeur: cours-documentation/documentation-editeur.md
+      - ADR de la démonstration: cours-documentation/adr/001-conserver-annulations.md
+      - Référence générée: reference-api/global.html
+      - Résultats BDD: rapport-bdd.html
+  - Animer: guide-animation.md
+  - Ressources:
+      - Outils et sources: cours-documentation/outils-et-sources.md
+      - Crédits des visuels: cours-documentation/visuels/credits.md
+plugins:
+  - search:
+      lang: fr
+hooks:
+  - scripts/mkdocs_hook.py
+markdown_extensions:
+  - fenced_code
+  - tables
+  - toc:
+      permalink: true
+extra_css:
+  - cours-documentation/visuels/lecture.css
+validation:
+  links:
+    not_found: warn
+    unrecognized_links: warn

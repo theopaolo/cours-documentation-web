@@ -1,0 +1,16 @@
+flowchart TB
+    S["Besoin : réserver une place à un atelier"]
+    S --> R1["Règle : respecter la capacité"]
+    S --> R2["Règle : un seul enregistrement par personne et séance"]
+    R1 --> E1["Exemple : 1 place libre, Alice est acceptée"]
+    R1 --> E2["Exemple : 0 place libre, Bob est refusé"]
+    R2 --> E3["Exemple : Alice a annulé, sa nouvelle demande est refusée"]
+    R2 --> Q["Question : autoriser la réactivation de la réservation ?"]
+    classDef besoin fill:#fff2b3,stroke:#6b5b24,color:#202020
+    classDef regle fill:#dceeff,stroke:#335c85,color:#202020
+    classDef exemple fill:#def2df,stroke:#376c3b,color:#202020
+    classDef question fill:#fbe0dc,stroke:#88493e,color:#202020
+    class S besoin
+    class R1,R2 regle
+    class E1,E2,E3 exemple
+    class Q question

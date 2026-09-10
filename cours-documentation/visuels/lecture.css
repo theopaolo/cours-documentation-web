@@ -1,0 +1,16 @@
+body { font-family: Arial, sans-serif; line-height: 1.55; background-image: none; }
+body::before { background: none; }
+.navbar.bg-primary { background-image: none; --bs-primary-rgb: 36, 69, 89; }
+.navbar-brand { font-size: 1.1rem; }
+.navbar .nav-link { font-size: 0.9rem; text-shadow: none; }
+h1, h2, h3, h4 { font-family: inherit; line-height: 1.2; }
+article img, .col-md-9 img { max-width: 100%; height: auto; }
+.col-md-9 img { border: none; border-radius: 0; padding: 0; }
+img[src$=".svg"] { max-width: 100%; background: white; }
+pre { border-radius: 2px; }
+table { font-size: 0.95rem; }
+@media print {
+  .navbar, .bs-sidebar { display: none; }
+  .col-md-9 { width: 100%; }
+  pre { white-space: pre-wrap; }
+}

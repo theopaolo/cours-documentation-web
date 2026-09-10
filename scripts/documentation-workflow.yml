@@ -1,0 +1,51 @@
+name: Vérifier la documentation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  documentation:
+    runs-on: macos-latest
+    timeout-minutes: 20
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: "true"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Installer les outils
+        run: |
+          npm ci
+          python -m pip install -r requirements-docs.txt
+          npx puppeteer browsers install chrome
+      - name: Vérifier les comportements
+        run: |
+          npm test
+          npm run test:bdd
+      - name: Générer les références et illustrations
+        run: |
+          npm run docs:api
+          npm run docs:deps
+          npm run docs:diagrams
+          python -m mocodo --input cours-documentation/visuels/reservations.mcd --output_dir cours-documentation/visuels --colors brewer+1 --shapes arial
+      - name: Construire le site
+        run: |
+          npm run check:links
+          python scripts/preparer-site.py
+          python -m mkdocs build --strict
+      - uses: actions/upload-artifact@v7
+        with:
+          name: documentation
+          path: site/
+          if-no-files-found: error
+          retention-days: 7

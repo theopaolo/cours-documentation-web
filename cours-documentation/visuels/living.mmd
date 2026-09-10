@@ -1,0 +1,9 @@
+flowchart TB
+    A["Besoin discuté avec le métier"] --> B["Exemples convenus"]
+    B --> C["Scénarios exécutables"]
+    C --> D["Code et tests"]
+    D --> E["Documentation construite"]
+    E --> A
+    F["ADR : raisons et conséquences"] --> E
+    D --> G["Référence et dépendances extraites"]
+    G --> E

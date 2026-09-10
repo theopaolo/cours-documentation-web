@@ -1,0 +1,20 @@
+erDiagram
+    Personnes ||--o{ Reservations : effectue
+    Ateliers ||--o{ Reservations : concerne
+    Personnes {
+      int id PK
+      string nom
+    }
+    Ateliers {
+      int id PK
+      string titre
+      datetime date_atelier
+      int capacite
+    }
+    Reservations {
+      int id PK
+      datetime date_creation
+      string statut
+      int personne_id FK
+      int atelier_id FK
+    }

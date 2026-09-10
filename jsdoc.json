@@ -1,0 +1,7 @@
+{
+  "source": {
+    "include": ["demo/src/reservations.mjs", "demo/src/statuts.mjs"],
+    "includePattern": ".+\\.mjs$"
+  },
+  "opts": { "destination": ".build/api" }
+}

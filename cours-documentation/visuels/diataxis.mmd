@@ -1,0 +1,13 @@
+flowchart TB
+    subgraph APP["Pendant l'apprentissage"]
+      direction LR
+      T["Tutoriel : première réservation guidée"]
+      E["Explication : pourquoi garder les annulations ?"]
+    end
+    subgraph TRAV["Pendant le travail"]
+      direction LR
+      G["Guide pratique : annuler une réservation"]
+      R["Référence : statuts et erreurs possibles"]
+    end
+    T -->|"Faire"| G
+    E -->|"Comprendre et consulter"| R

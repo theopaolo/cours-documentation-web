@@ -1,0 +1,17 @@
+sequenceDiagram
+    autonumber
+    actor P as Participant
+    participant N as Navigateur
+    participant S as Serveur
+    participant B as Base
+    P->>N: Demander une place
+    N->>S: Envoyer la réservation
+    S->>B: Contrôler et réserver dans une transaction
+    alt Place attribuée
+        B-->>S: Réservation enregistrée
+        S-->>N: Réservation confirmée
+    else Atelier complet ou doublon
+        B-->>S: Attribution refusée
+        S-->>N: Erreur métier expliquée
+    end
+    Note over S,B: Scénario de conception : stratégie transactionnelle à définir

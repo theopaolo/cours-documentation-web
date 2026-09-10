@@ -1,0 +1,9 @@
+stateDiagram-v2
+    [*] --> Confirmée : place attribuée
+    Confirmée --> Annulée : annulation
+    note right of Annulée
+      La réservation reste dans l'historique.
+      Une nouvelle création pour le même couple
+      personne / atelier est refusée.
+      La réactivation n'est pas proposée dans la démo.
+    end note
